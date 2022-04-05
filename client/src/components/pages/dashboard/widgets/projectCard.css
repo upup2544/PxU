@@ -1,0 +1,71 @@
+.project-card{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 16px 0px; /*  space between component */
+    background-color: #1A132F;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    width: 85%;
+    height: 40%;
+    border-radius: 25px;
+    margin-left: auto;
+    margin-right: auto; 
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.section-title{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.project-card .data{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.project-info{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.project-title{
+    font-size: 48px;
+    font-weight: bolder;
+    margin-left: auto;
+    color: aquamarine;
+}
+.data{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+.project-dayleft{
+    display: flex;
+    flex-direction: column;
+    margin-right: 80px;
+    margin-bottom: 10px;
+}
+.dayleft{
+    font-size: 26px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.remain{
+    font-size: 72px;
+    font-weight: bold;
+}

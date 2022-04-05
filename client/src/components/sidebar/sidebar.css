@@ -1,0 +1,54 @@
+.profilebox{
+    margin: 20px;
+}
+.profilePic{
+    display: flex;
+    margin: auto;;
+    border-radius: 50%;
+    background-color: coral;
+    width: 89px;
+    height:89px;
+    align-items: center;
+    place-content: flex-start;
+    justify-content: center;
+    
+}
+.sidebar {   
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 193px;
+    background-color: #334152;
+}
+
+.sidebarList {
+    height: auto;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+}
+
+.sidebarList .items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    place-content: flex-start;
+    padding: 1rem 3rem;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebarList .items:hover{
+    cursor: pointer; 
+    background-color: salmon;
+}
+
+.sidebarList #active{
+    background-color: #1C2531;
+}

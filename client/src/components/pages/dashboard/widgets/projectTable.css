@@ -1,0 +1,58 @@
+.column-tile{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.section-title{
+    font-size: 24px;
+    font-weight: bold;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.column-tile .list-project{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.column-tile .list-project .prroject-title{
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.column-tile .list-project .prroject-date{
+    font-size: 18px;
+    
+}
+
+
+.column-tile {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    height: 50%;
+    background-color: white;
+    border-color: #1A132F;
+    border: 2px solid; 
+    border-radius: 25px;
+    padding: 30px;
+    margin-right: auto;
+    text-align: center;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
