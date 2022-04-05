@@ -15,7 +15,7 @@ const Feed = () =>{
     }, []);
 
     const go = () =>{
-      window.location.href="/createcompany"
+      window.location.href="/payment"
     }
 
 

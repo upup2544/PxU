@@ -1,0 +1,16 @@
+.Container{
+    width: 100vw;
+    height: 100vh;
+}
+
+.Container .Lower-tile{
+    display: flex;
+    flex-direction: row;
+}
+
+.Lower-tile .right-lower-tile{
+    width: 50%;
+}
+.Lower-tile .left-lower-tile{
+    width: 50%;
+}
