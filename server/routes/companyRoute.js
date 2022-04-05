@@ -6,18 +6,16 @@ const db = mysql.createPool({
     host: "localhost",
     user: "root",
     password: "",
-    database: "LISDatabase",
+    database: "pxudatabase",
 });
 
 router.get('/', (req, res)=> {
 
-    //show all feed
-    const sqlSelect = "SELECT * FROM POST WHERE post_status Like 'Available' ORDER BY post_id DESC"
+    const sqlSelect = "SELECT * FROM company"
     db.query(sqlSelect, (err, result) => {
         res.send(result);
     })
     
 });
-
 
 export default router;
