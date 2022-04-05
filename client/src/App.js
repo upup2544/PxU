@@ -21,7 +21,7 @@ function App() {
         <Route path='/' element={<AppLayout />}>
           <Route index element={<Dashboard />} />
           <Route path='/works' element={<Works />} />
-          <Route path='/quotation' element={<Quotation />} />
+          <Route path='/quotation' element={<Com />} />
           <Route path='/payment' element={<CreateCom/>} />
           <Route path='/receipts' element={<PdfPage/>} />
         </Route>
