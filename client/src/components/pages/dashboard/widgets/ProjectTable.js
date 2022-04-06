@@ -21,7 +21,7 @@ function ProjectTable() {
                 {prj.map((project) => {
                     return (<div className='list-project'>
                         <div className='prroject-title'>{project.workName}</div>   
-                        <div className='prroject-date'>{moment(project.endDate).format("MM/DD/YYYY")}</div>
+                        <div className='prroject-date'>{moment(project.endDate).format("DD/MM/YYYY")}</div>
                     </div>);
                 })}
             </div>
