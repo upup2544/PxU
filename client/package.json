@@ -16,6 +16,7 @@
     "react-bootstrap": "^2.2.3",
     "react-datetime": "^3.1.1",
     "react-dom": "^16.0.0",
+    "react-modal": "^3.14.4",
     "react-router-dom": "^6.3.0",
     "react-scripts": "^4.0.3",
     "react-table-view": "^1.1.1",
