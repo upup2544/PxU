@@ -13,7 +13,7 @@ router.get('/', (req, res)=> {
 
     const sqlSelect = "SELECT * FROM company"
     db.query(sqlSelect, (err, result) => {
-        console.log(result);
+        // console.log(result);
         res.send(result);
     })
     
@@ -35,7 +35,7 @@ router.post('/', (req, res) => {
 
     const sqlInsert = "INSERT INTO company (companyName,type,address,description,postcode,contactName,contactNumber,contactEmail,taxNumber,bankName,bankAccount,bankAccountName) VALUES (?,?,?,?,?,?,?,?,?,?,?,?);"
     db.query(sqlInsert, [companyName,type,address,description,postcode,contactName,contactNumber,contactEmail,taxNumber,bankName,bankAccount,bankAccountName], (err,result)=>{
-        console.log(result);
+        // console.log(result);
         res.send(result);
     }) 
 });

@@ -25,7 +25,7 @@ router.post('/', (req, res) => {
 
     const sqlInsert = "INSERT INTO scope (workID,text,price) VALUES (?,?,?);"
     db.query(sqlInsert, [workID,text,price], (err,result)=>{
-        console.log(result);
+        console.log(workID);
         res.send(result);
     }) 
 });
