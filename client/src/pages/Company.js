@@ -6,7 +6,6 @@ const Feed = () =>{
     const [company, setcompany] = useState([]);
     
     useEffect (() => {
-
             Axios.get(`http://localhost:8000/company`, {
             }).then((response) => {
                 setcompany(response.data);
