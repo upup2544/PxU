@@ -3,7 +3,6 @@ import cors from 'cors';
 const app = express();
 //import routers
 import companyRoute from './routes/companyRoute.js'
-import createcompanyRoute from './routes/createcompanyRoute.js'
 import dashboardW1Route from './routes/dashbaordW1Route.js'
 import workRoute from './routes/workRoute.js'
 import lastworkRoute from './routes/lastworkRoute.js'
@@ -14,7 +13,6 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/company", companyRoute);
-app.use("/createcompany", createcompanyRoute);
 app.use("/", dashboardW1Route);
 app.use("/works", workRoute);
 app.use("/detail", detailRoute);

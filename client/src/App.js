@@ -11,7 +11,9 @@ import Com from './pages/Company'
 import Work from './pages/Work'
 import PdfPage from './pages/BasicDocument'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap-icons/font/bootstrap-icons.css";
 import ExportPdfComponent from "./pages/exportpdf";
+
 
 function App() {
   return (
