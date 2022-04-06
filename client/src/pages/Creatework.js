@@ -12,6 +12,9 @@ const Creatework = () => {
     const [workStatus, setworkStatus] = useState(['On process']);
     const [workNote, setworkNote] = useState(['']);
     const [company, setCompany] = useState([]);
+    const [workID, setworkID] = useState([]);
+    const [text, settext] = useState([]);
+    const [price, setprice] = useState(['']);
 
     useEffect(() => {
 
@@ -19,10 +22,11 @@ const Creatework = () => {
         }).then((response) => {
             setCompany(response.data);
         });
+      
 
     }, []);
 
-    const submit = () => {
+    const submitWork = () => {
         Axios.post("http://localhost:8000/works", {
             workName: workName,
             startDate: startDate,
@@ -35,6 +39,16 @@ const Creatework = () => {
             alert(" create work success");
         })
     };
+
+    // const submitdetail = () => {
+    //     Axios.post("http://localhost:8000/detail", {
+    //         workID: workID+1,
+    //         text: text,
+    //         price: price,
+    //     }).then((response) => {
+    //         alert(" create detail success");
+    //     })
+    // };
 
 
     return (
@@ -56,6 +70,9 @@ const Creatework = () => {
                 <div className="aa">
                     <p>ผู้ว่าจ้าง :   </p>
                     <select class="dropdown" onChange={(e) => { setcustomerID(e.target.value) }}>
+                        <option >
+                            โปรดเลือกบริษัท
+                        </option>
                         {company.map((val, key) => {
                             return (
                                 <option value={val.companyID}>
@@ -66,19 +83,40 @@ const Creatework = () => {
                     </select>
                 </div>
                 <div className="aa">
-                    <p>ผู้ว่าจ้าง :  </p>
-                    <input onChange={(e) => { setcustomerID(e.target.value) }}></input>
+                    <p>ผู้ผลิต :   </p>
+                    <select class="dropdown" onChange={(e) => { setproducterID(e.target.value) }}>
+                        <option >
+                            โปรดเลือกบริษัท
+                        </option>
+                        {company.map((val, key) => {
+                            return (
+                                <option value={val.companyID}>
+                                    Name: {val.companyName}
+                                </option>
+                            );
+                        })}
+                    </select>
                 </div>
-                <div className="aa">
-                    <p>ผู้ผลิต :  </p>
-                    <input onChange={(e) => { setproducterID(e.target.value) }}></input>
-                </div>
+                {/* <div>
+                <p>scope :  </p>
+                    <table>
+                        <tr>
+                            <td>
+                                <input onChange={(e) => { settext(e.target.value) }} />
+                                    </td>
+                                    <td>
+                                        <button onClick={() => { submitdetail() }}></button>
+                                    </td>
+                                 </tr>
+                                 </table>
+                
+                </div> */}
                 <div className="aa">
                     <p>หมายเหตุ :  </p>
                     <input onChange={(e) => { setworkNote(e.target.value) }}></input>
                 </div>
                 <div className="aa">
-                    <button onClick={() => { submit() }}>ยืนยัน</button>
+                    <button onClick={() => { submitWork() }}>ยืนยัน</button>
                 </div>
             </div>
         </div>)
