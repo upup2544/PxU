@@ -3,14 +3,14 @@ import cors from 'cors';
 const app = express();
 //import routers
 import companyRoute from './routes/companyRoute.js'
-import createcompanyRoute from './routes/createcompanyRoute.js'
+import workRoute from './routes/workRoute.js'
 
 app.use(cors());
 
 app.use(express.json());
 
 app.use("/company", companyRoute);
-app.use("/createcompany", createcompanyRoute);
+app.use("/works", workRoute);
 
 app.listen(8000, () =>{
     console.log("Running on port 8000");

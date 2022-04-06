@@ -15,6 +15,7 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "^4.0.3",
     "react-table-view": "^1.1.1",
+    "react-to-print": "^2.14.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

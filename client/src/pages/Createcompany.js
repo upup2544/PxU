@@ -2,21 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import Axios from 'axios'
 import '../App.css';
 
-const Feed = () => {
-  const [companyID, setcompanyID] = useState([]);
-  var id = 1;
-  useEffect(() => {
-
-    Axios.get("http://localhost:8000/createcompany", {
-    }).then((response) => {
-      setcompanyID(response.data);
-    });
-
-  }, []);
-
-  companyID.map((val, key) => {
-    id = val.companyID + 1;
-  })
+const Createcompany = () => {
   const [companyName, setcompanyName] = useState([]);
   const [type, settype] = useState([]);
   const [address, setaddress] = useState([]);
@@ -31,8 +17,7 @@ const Feed = () => {
   const [bankAccountName, setbankAccountName] = useState([]);
 
   const submit = () => {
-    Axios.post("http://localhost:8000/createcompany", {
-      companyID:id,
+    Axios.post("http://localhost:8000/company", {
       companyName: companyName,
       type: type,
       address: address,
@@ -115,4 +100,4 @@ const Feed = () => {
     </div>)
 };
 
-export default Feed;
+export default Createcompany;
