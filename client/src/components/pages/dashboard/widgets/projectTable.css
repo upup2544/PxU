@@ -7,7 +7,7 @@
 .section-title{
     font-size: 24px;
     font-weight: bold;
-    animation: fadeInAnimation ease 3s;
+    animation: fadeInAnimation ease 0.5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -41,7 +41,7 @@
     padding: 30px;
     margin-right: auto;
     text-align: center;
-    animation: fadeInAnimation ease 3s;
+    animation: fadeInAnimation ease 0.5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
