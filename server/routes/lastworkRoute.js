@@ -11,7 +11,7 @@ const db = mysql.createPool({
 
 router.get('/', (req, res)=> {
 
-    const sqlSelect = "SELECT workID FROM work DESC limit 1"
+    const sqlSelect = "SELECT workID FROM work ORDER BY workID DESC LIMIT 1"
     db.query(sqlSelect, (err, result) => {
         res.send(result);
     })

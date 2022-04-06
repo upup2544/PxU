@@ -8,7 +8,7 @@ import workRoute from './routes/workRoute.js'
 import lastworkRoute from './routes/lastworkRoute.js'
 import detailRoute from './routes/scopeRoute.js'
 import quotationRoute from './routes/quotationRoute.js'
-
+import scopeRoute from './routes/scopeRoute.js'
 
 app.use(cors());
 
@@ -17,7 +17,7 @@ app.use(express.json());
 app.use("/company", companyRoute);
 app.use("/", dashboardW1Route);
 app.use("/works", workRoute);
-app.use("/detail", detailRoute);
+app.use("/scope", scopeRoute);
 app.use("/lastwork", lastworkRoute);
 app.use("/quotation", quotationRoute);
 

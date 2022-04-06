@@ -19,6 +19,7 @@ router.get('/', (req, res)=> {
 });
 
 router.post('/', (req, res) => {
+    const workID = req.body.workID
     const workName = req.body.workName
     const startDate = req.body.startDate
     const endDate = req.body.endDate
@@ -27,9 +28,9 @@ router.post('/', (req, res) => {
     const workStatus = req.body.workStatus
     const workNote = req.body.workNote
 
-    const sqlInsert = "INSERT INTO work (workName,startDate,endDate,customerID,producterID,workStatus,workNote) VALUES (?,?,?,?,?,?,?);"
-    db.query(sqlInsert, [workName,startDate,endDate,customerID,producterID,workStatus,workNote], (err,result)=>{
-        console.log(result);
+    const sqlInsert = "INSERT INTO work (workID,workName,startDate,endDate,customerID,producterID,workStatus,workNote) VALUES (?,?,?,?,?,?,?,?);"
+    db.query(sqlInsert, [workID,workName,startDate,endDate,customerID,producterID,workStatus,workNote], (err,result)=>{
+        // console.log(result);
         res.send(result);
     }) 
 });
