@@ -1,10 +1,12 @@
 import React,{ useState, useEffect, useContext } from "react";
 import Axios from 'axios'
 import '../App.css';
+import Modal from "../Modal/Modal";
+import CreateCom from './Createcompany'
 
-const Feed = () =>{
+const Company = () =>{
     const [company, setcompany] = useState([]);
-    
+    const [show, setShow] = useState(false);
     useEffect (() => {
             Axios.get(`http://localhost:8000/company`, {
             }).then((response) => {
@@ -13,14 +15,16 @@ const Feed = () =>{
         
     }, []);
 
-    const go = () =>{
-      window.location.href="/payment"
-    }
 
 
     return (
         <div>
-          <button onClick={()=>{go()}}>Create</button>
+          <div >
+            <button onClick={() => setShow(true)}>Create</button>
+            <Modal title="My Modal" onClose={() => setShow(false)} show={show}>
+              <CreateCom/>
+            </Modal>
+          </div>
             <row>
             {company.map((val, key) => {
           return (
@@ -46,4 +50,4 @@ const Feed = () =>{
             </div>)
 };
 
-export default Feed;
+export default Company;
