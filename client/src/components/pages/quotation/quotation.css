@@ -20,8 +20,6 @@
     width: 70%;
     display: flex;
     align-items: center;
-    margin-left: auto;
-    margin-right: auto;
     justify-content: center;
 }
 
@@ -35,12 +33,12 @@
 
 .navbar-left{
     width: 50%;
-    background-color: aquamarine;
+    
 }
 
 .navbar-right{
     width: 50%;
-    background-color: blueviolet;
+    
 }
 
 .menubar{
@@ -63,4 +61,11 @@
 .menubar .bi, .editButt{
     cursor: pointer;
     margin-right: 20px;
+}
+
+.navbar{
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%; 
+    justify-content: space-around;
 }
