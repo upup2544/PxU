@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './quotation.css'
-import axios from 'axios'
+import Axios from 'axios'
 import moment from 'moment'
 import ExportPdfComponent from "../createpdf/ExportPdf";
 import Modal from "../../../Modal/Modal";
@@ -8,26 +8,29 @@ import PDF from "../createpdf/ExportPdf"
 import Receipts from "../receipts/Receipts";
 import Company from "../company/Company";
 import { Button } from "bootstrap";
+const AuthContext = React.createContext();
 
 const Quotation = () => {
   const [quo, setQuo] = useState([]);
   const [CreateDOCS, setCreateDOCS] = useState(false);
   const [CreatePDF, setCreatePDF] = useState(false);
   const [openReceipt, setopenReceipt] = useState(false);
+  const [qID, setQuotationID] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8000/quotation', {
+    Axios.get('http://localhost:8000/quotation', {
     }).then((response) => {
       setQuo(response.data);
     });
   }, []);
 
-  const deleteQuotation = (quotationID) => {
-    console.log(quotationID);
-    axios.delete("http://localhost:8000/quotation", {
-      quotationID: quotationID
-    })
+  const deleteQuotation = (ID) => {
+    if (window.confirm("Do you want to delete this?")) {
+      Axios.delete(`http://localhost:8000/quotation/${ID}`)
+      window.location.reload(false);
+    }
   }
+
 
 
   return (
@@ -80,7 +83,7 @@ const Quotation = () => {
                           <Receipts />
                         </Modal></td>
                       <td> <div className="editButt"> <a>Edit</a> </div></td>
-                      <td> <button class="bi bi-trash" style={{ fontSize: 24 }} onClick={()=>{deleteQuotation(items.quotationID)}}></button> </td>
+                      <td> <button class="bi bi-trash" style={{ fontSize: 24 }} onClick={() => { deleteQuotation(items.quotationID) }}></button> </td>
                     </td>
                   </td>
                 </tr>)
@@ -89,9 +92,10 @@ const Quotation = () => {
         </table>
       </div>
 
-
     </div>
   );
 }
+
+export { AuthContext };
 
 export default Quotation

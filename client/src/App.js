@@ -4,7 +4,7 @@ import AppLayout from './components/layout/AppLayout';
 import Dashboard from './components/pages/dashboard/Dashboard';
 import Works from './components/pages/works/Works';
 import Work from './components/pages/works/Work';
-import Quotation from './components/pages/quotation/quotation';
+import Quotation from './components/pages/quotation/Quotation';
 import Payment from './components/pages/payment/Payment';
 import Receipts from './components/pages/receipts/Receipts';
 import Com from './components/pages/company/Company';

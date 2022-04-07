@@ -19,13 +19,11 @@ router.get('/', (req, res) => {
     })
 })
 
-router.delete('/', (req, res) => {
-    const quotationID = req.body.quotationID;
-    console.log(quotationID);
+router.delete('/:id', (req, res) => {
+    const qID = req.params.id;
     const sqlDelete = "DELETE FROM quotation WHERE quotationID=?";
-    db.query(sqlDelete,[quotationID],(err, sqlQuotation) => {
+    db.query(sqlDelete,[qID],(err, sqlQuotation) => {
         if(err) throw err;
-        console.log(quotationID);
     })
 })
 
