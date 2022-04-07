@@ -1,28 +1,22 @@
-import React, { useState, useEffect, useContext } from "react";
-import { AuthContext } from "../quotation/Quotation";
-import Axios from 'axios'
-import LogoImage from "../../images/logo.jpg";
-import './createpdf.css'
+import React, { useDebugValue } from "react";
+import './pages/createpdf/createpdf.css'
+import LogoImage from "./images/logo.jpg";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-const TableComponent = () => {
-    const [quo, setQuo] = useState([]);
-    const quotationID = useContext(AuthContext);
-    useEffect(() => {
-        Axios.get(`http://localhost:8000/quotation/${quotationID}`, {
-        }).then((response) => {
-            setQuo(response.data);
-        });
-    }, []);
+
+import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+function PdfLayout() {
+    //onst dataW1 = prj
     return (
         <div className="paper">
             <div className="paperForm">
                 <div className="header">
                     <div className="Com-Logo Quotation">
                         <div className="Logocom">
-                            <img src={LogoImage} width="75" height="55" />
+                            <img src={LogoImage} width="170" height="150" />
                         </div>
                         <div className="QuotationText">
-                            <h5>ใบเสนอราคา</h5>
+                            <h3>ใบเสนอราคา</h3>
                         </div>
                     </div>
                     <div className="comAdd detail">
@@ -95,7 +89,6 @@ const TableComponent = () => {
 
         </div>
     );
-
 }
-
-export default TableComponent;
+//} 
+export default PdfLayout

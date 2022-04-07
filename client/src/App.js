@@ -9,6 +9,7 @@ import Payment from './components/pages/payment/Payment';
 import Receipts from './components/pages/receipts/Receipts';
 import Com from './components/pages/company/Company';
 import ExportPdfComponent from "./components/pages/createpdf/ExportPdf";
+import PdfLayout from './components/pdfLayout';
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -26,6 +27,7 @@ function App() {
           <Route path='/payment' element={<Com/>} />
           <Route path='/receipts' element={<ExportPdfComponent/>} />
           <Route path='/pdf' element={<ExportPdfComponent />} />
+          <Route path='/pdfLayout' element={<PdfLayout />} />
         </Route>
       </Routes>
     </BrowserRouter>
