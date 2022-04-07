@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState, useEffect,useContext } from "react";
+import { AuthContext } from "../quotation/Quotation";
+import Axios from 'axios'
 
-class TableComponent extends React.Component {
-    render() {
+const TableComponent =()=>{
+    const [quo, setQuo] = useState([]);
+    const quotationID  = useContext(AuthContext);
+    useEffect(() => {
+        Axios.get(`http://localhost:8000/quotation/${quotationID}`, {
+        }).then((response) => {
+          setQuo(response.data);
+        });
+      }, []);
+
         return (
             <table className="table">
                 <thead>
@@ -11,17 +21,19 @@ class TableComponent extends React.Component {
                         <th>Email</th>
                         <th>Image</th>
                     </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>John</td>
-                        <td>Doe</td>
+                </thead><tbody>
+                {quo.map((val)=>{
+return(<tr>
+                        <td>{val.quotationDate}</td>
+                        <td>{val.workName}</td>
                         <td>john@example.com</td>
                         <td>
                             <img src="https://i.pravatar.cc/50?img=1" alt="thumb" />
                         </td>
-                    </tr>
-                    <tr>
+                    </tr>)
+                    
+   
+                })} <tr>
                         <td>Mary</td>
                         <td>Moe</td>
                         <td>mary@example.com</td>
@@ -40,7 +52,7 @@ class TableComponent extends React.Component {
                 </tbody>
             </table>
         );
-    }
+    
 }
 
 export default TableComponent;

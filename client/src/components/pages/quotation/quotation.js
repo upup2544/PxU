@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useContext } from "react";
 import './quotation.css'
 import Axios from 'axios'
 import moment from 'moment'
@@ -11,6 +11,7 @@ import { Button } from "bootstrap";
 const AuthContext = React.createContext();
 
 const Quotation = () => {
+  const [count, setcount] = useState([]);
   const [quo, setQuo] = useState([]);
   const [CreateDOCS, setCreateDOCS] = useState(false);
   const [CreatePDF, setCreatePDF] = useState(false);
@@ -69,8 +70,11 @@ const Quotation = () => {
                       {/* <td> <button class="bi bi-filetype-pdf" onClick={(e) => {return <ExportPdfComponent/>} }></button>  </td> */}
                       <td> <a class="bi bi-filetype-pdf" style={{ fontSize: 24 }} onClick={() => {
                         setCreatePDF(true);
+                        setcount(items.quotationID);
                       }}><Modal title="ใบเสนอราคาPDF" onClose={() => setCreatePDF(false)} show={CreatePDF}>
-                          <PDF />
+                        <AuthContext.Provider value={count}>
+                          <PDF/>
+                        </AuthContext.Provider>
                         </Modal></a> </td>
                       <td> <a class="bi bi-file-earmark-word" style={{ fontSize: 24 }} onClick={() => {
                         setCreateDOCS(true);

@@ -19,6 +19,18 @@ router.get('/', (req, res) => {
     })
 })
 
+router.get('/:id', (req, res) => {
+    const qID = req.params.id;
+    const sqlQuotation = "SELECT * FROM quotation as q , work as w  WHERE q.workID = w.workID AND q.quotationID = ? ";
+    console.log(qID);
+    db.query(sqlQuotation,[qID], (err, sqlQuotationRe) => {
+        if(err) throw err;
+        console.log(sqlQuotationRe);
+        res.send(sqlQuotationRe);
+    })
+})
+
+
 router.delete('/:id', (req, res) => {
     const qID = req.params.id;
     const sqlDelete = "DELETE FROM quotation WHERE quotationID=?";
