@@ -32,7 +32,6 @@ const Createcompany = () => {
       bankAccountName: bankAccountName,
     }).then((response) => {
       alert(" create company success");
-      window.location.href = "/payment";
     })
   };
 

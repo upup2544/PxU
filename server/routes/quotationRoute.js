@@ -14,9 +14,19 @@ router.get('/', (req, res) => {
     
     db.query(sqlQuotation, (err, sqlQuotationRe) => {
         if(err) throw err;
-        console.log(sqlQuotationRe);
-
+        // console.log(sqlQuotationRe);
         res.send(sqlQuotationRe);
     })
 })
+
+router.delete('/', (req, res) => {
+    const quotationID = req.body.quotationID;
+    console.log(quotationID);
+    const sqlDelete = "DELETE FROM quotation WHERE quotationID=?";
+    db.query(sqlDelete,[quotationID],(err, sqlQuotation) => {
+        if(err) throw err;
+        console.log(quotationID);
+    })
+})
+
 export default router;

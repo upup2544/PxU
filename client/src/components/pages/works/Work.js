@@ -18,6 +18,7 @@ const Work = () => {
     }, []);
 
     return (
+<<<<<<< HEAD
         <div className="site">
             <div className='banner'>
                 <h1> Works </h1>
@@ -82,6 +83,14 @@ const Work = () => {
 
 
                 </table>
+=======
+        <div>
+            <div >
+                <button onClick={() => setShow(true)}>Create</button>
+                <Modal title="Create Work" onClose={() => setShow(false)} show={show}>
+                    <Creatework />
+                </Modal>
+>>>>>>> fc9b0c74c588f23d6de986905e6fb8da995a6b3b
             </div>
             <row>
 
