@@ -107,6 +107,14 @@ const Creatework = () => {
     }, []);
 
     const submitWork = () => {
+        
+        todos.forEach((todo) => {
+            Axios.post("http://localhost:8000/scope", {
+                workID: workID[0].workID + 1,
+                text: todo.text,
+                price: price,
+            }).then((response) => { })
+        });
         Axios.post("http://localhost:8000/works", {
             workID: workID[0].workID + 1,
             workName: workName,
@@ -116,14 +124,9 @@ const Creatework = () => {
             producterID: producterID,
             workStatus: workStatus,
             workNote: workNote,
-        }).then((response) => { })
-        todos.forEach((todo) => {
-            Axios.post("http://localhost:8000/scope", {
-                workID: workID[0].workID + 1,
-                text: todo.text,
-                price: price,
-            }).then((response) => { })
-        });
+        }).then((response) => {
+            alert('Create Success');
+        })
     };
 
 
@@ -147,8 +150,10 @@ const Creatework = () => {
                     <p>ผู้ว่าจ้าง :   </p>
                     <select class="dropdown" onChange={(e) => {
                         setcustomerID(e.target.value);
-                        if (e.target.value == 'create') { setShow(true);
-                        e.target.value=0; }
+                        if (e.target.value == 'create') {
+                            setShow(true);
+                            e.target.value = 0;
+                        }
                     }}>
                         <option value='0'>
                             โปรดเลือกบริษัท
@@ -161,18 +166,20 @@ const Creatework = () => {
                             );
                         })}
                         <option value={'create'}>Create</option>
-                        <Modal title="My Modal" onClose={() => {setShow(false)}} show={show}>
-                    <CreateCom />
-                </Modal>
+                        <Modal title="My Modal" onClose={() => { setShow(false) }} show={show}>
+                            <CreateCom />
+                        </Modal>
                     </select>
                 </div>
                 <div className="aa">
                     <p>ผู้ผลิต :   </p>
-                    <select class="dropdown" onChange={(e) => { 
+                    <select class="dropdown" onChange={(e) => {
                         setproducterID(e.target.value);
-                        if (e.target.value == 'create') { setShow(true);
-                            e.target.value=0; } 
-                        }}>
+                        if (e.target.value == 'create') {
+                            setShow(true);
+                            e.target.value = 0;
+                        }
+                    }}>
                         <option value='0'>
                             โปรดเลือกบริษัท
                         </option>

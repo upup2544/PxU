@@ -21,7 +21,7 @@ const Work = () => {
         <div>
             <div >
                 <button onClick={() => setShow(true)}>Create</button>
-                <Modal title="My Modal" onClose={() => setShow(false)} show={show}>
+                <Modal title="Create Work" onClose={() => setShow(false)} show={show}>
                     <Creatework />
                 </Modal>
             </div>

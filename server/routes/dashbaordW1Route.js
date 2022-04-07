@@ -18,10 +18,10 @@ router.get('/', (req, res) => {
         //console.log(recentWork);
         db.query(sqlNearestWork, (err, nearestWork) => {
             if(err) throw err;
-            console.log(nearestWork);
+            //console.log(nearestWork);
             db.query(sqlNearestWorkList, (err, nearestWorkList) => {
                 if(err) throw err;
-                console.log(nearestWorkList);
+                //console.log(nearestWorkList);
 
             res.send([recentWork, nearestWork, nearestWorkList]);
             })
