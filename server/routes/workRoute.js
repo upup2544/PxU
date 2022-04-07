@@ -18,6 +18,23 @@ router.get('/', (req, res)=> {
     
 });
 
+router.get('/:id', (req, res)=> {
+    const workID=req.params.id;
+    const sqlscopeSelect = "SELECT * FROM work as w,scope as s WHERE w.workID=s.workID AND w.workID=?";
+    const sqlcustomer= "SELECT * FROM work as w,company as c WHERE w.customerID=c.companyID AND w.workID=?";
+    const sqlproducter= "SELECT * FROM work as w,company as c WHERE w.producterID=c.companyID AND w.workID=?";
+    db.query(sqlscopeSelect,[workID],(err, allScope) => {
+        db.query(sqlcustomer, [workID],(err, customer) => {
+            db.query(sqlproducter,[workID], (err, producter) => {
+                res.send([allScope, producter, customer]);
+            })
+        })
+
+    })
+    
+});
+
+
 router.post('/', (req, res) => {
     const workID = req.body.workID
     const workName = req.body.workName

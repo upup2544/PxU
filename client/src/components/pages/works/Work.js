@@ -3,12 +3,14 @@ import Axios from 'axios'
 import Modal from "../../../Modal/Modal";
 import Creatework from './Creatework'
 import moment from "moment";
+import Createquotation from "../quotation/Createquotation";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './work.css'
 
 const Work = () => {
     const [work, setWork] = useState([]);
     const [show, setShow] = useState(false);
+    const [createquotation, setcreatequotation] = useState(false);
     useEffect(() => {
         Axios.get(`http://localhost:8000/works`, {
         }).then((response) => {
@@ -70,7 +72,13 @@ const Work = () => {
                                         {/* <td> <button class="bi bi-filetype-pdf" onClick={(e) => {return <ExportPdfComponent/>} }></button>  </td> */}
                                         <td> <a class="bi bi-filetype-pdf" style={{ fontSize: 24 }}  ></a> </td>
                                         <td> <a class="bi bi-file-earmark-word" style={{ fontSize: 24 }}  > </a> </td>
-                                        <td> <a class="bi bi-receipt" style={{ fontSize: 24 }} ></a> </td>
+                                        <td><a class="bi bi-send" style={{ fontSize: 24 }} onClick={() => {
+                                            setcreatequotation(true);
+                                        }} ></a>
+                                        <Modal title="ใบเสร็จ" onClose={() => setcreatequotation(false)} show={createquotation}>
+                                                <Createquotation data={val.workID} />
+                                            </Modal>
+                                            </td>
                                         <td> <div className="editButt"> <a>Edit</a> </div></td>
                                         <td> <a class="bi bi-trash" style={{ fontSize: 24 }} ></a> </td>
                                     </td>
