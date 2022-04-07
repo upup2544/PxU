@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
 import Axios from 'axios'
-import '../App.css';
 import { Button, Card, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Modal from "../Modal/Modal";
-import CreateCom from './Createcompany'
+import '../../../App.css';
+import Modal from "../../../Modal/Modal";
+import CreateCom from '../company/Createcompany'
 
 const Creatework = () => {
     function Todo({ todo, gotTodo, removeTodo, saveEdit, all }) {

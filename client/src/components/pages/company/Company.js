@@ -1,7 +1,7 @@
 import React,{ useState, useEffect, useContext } from "react";
 import Axios from 'axios'
-import '../App.css';
-import Modal from "../Modal/Modal";
+import '../../../App.css';
+import Modal from "../../../Modal/Modal";
 import CreateCom from './Createcompany'
 
 const Company = () =>{

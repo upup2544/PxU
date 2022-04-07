@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import Axios from 'axios'
-import '../App.css';
+import '../../../App.css';
 
 const Createcompany = () => {
   const [companyName, setcompanyName] = useState([]);
