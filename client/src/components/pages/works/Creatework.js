@@ -3,6 +3,7 @@ import Axios from 'axios'
 import { Button, Card, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../../App.css';
+import './createWork.css'
 import Modal from "../../../Modal/Modal";
 import CreateCom from '../company/Createcompany'
 

@@ -20,8 +20,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1800px;
-  height: 900px;
+  width: 1680px;
+  height: 1050px;
   background-color: #fff;
   transition: all 0.3s ease-in-out;
   transform: translateY(-200px);
@@ -33,6 +33,7 @@
 }
 
 .modal.exit {
+  border-radius: 20%;
   opacity: 0;
 }
 
@@ -57,4 +58,9 @@
   padding: 10px;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
+}
+
+.button{
+  
+  width: 150px;
 }

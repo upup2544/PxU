@@ -20,6 +20,7 @@ const Work = () => {
 
     return (
         <div className="site">
+            <div className="H-site">
             <div className='banner'>
                 <h1> Works </h1>
             </div>
@@ -37,9 +38,7 @@ const Work = () => {
                         <button type="submit">Go</button>
                     </form>
 
-
                     <button className="Createbutton" onClick={() => setShow(true)}>Create</button>
-
 
                     <Modal title="My Modal" onClose={() => setShow(false)} show={show}>
                         <Creatework />
@@ -58,8 +57,6 @@ const Work = () => {
                         </tr>
                     </thead>
                     <tbody>
-
-                    </tbody>
                     {work.map((val, key) => {
                         return (
                             <tr className="itemsRow" >
@@ -86,6 +83,8 @@ const Work = () => {
                             </tr>
                         );
                     })}
+                    </tbody>
+                    
 
 
                 </table>
@@ -94,7 +93,7 @@ const Work = () => {
 
             </row>
 
-
+            </div>
 
         </div>)
 };
