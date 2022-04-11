@@ -35,7 +35,7 @@ const Modal = props => {
             <div className="modal-footer">
             
               <button onClick={props.onClose} className="button">
-                Close
+                Close <i class="bi bi-x"></i>
               </button>
             </div>
           </div>

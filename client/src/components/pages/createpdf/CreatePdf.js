@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../quotation/Quotation";
 import Axios from 'axios'
 import LogoImage from "../../images/logo.jpg";
+import BlueLogo from "../../images/bluelogo.jpg"
 import './createpdf.css'
 
 const TableComponent = () => {
@@ -14,7 +15,7 @@ const TableComponent = () => {
         });
     }, []);
     return (
-        <div className="paper">
+        <div className="paper" >
             <div className="paperForm">
                 <div className="header">
                     <div className="Com-Logo Quotation">
@@ -26,32 +27,38 @@ const TableComponent = () => {
                         </div>
                     </div>
                     <div className="comAdd detail">
-                        <div className="comaddress">
-                            <div className="comAddr">
-                                <p>หจก.อินฟินิตี้ ฟีโนมีนอล ซอฟท์แวร์ (Infinity Phenomenal Software) <br />
-                                    ที่อยู่ 633/144 หมู่บ้านกาญจน์กนกทาวน์โฮม4 ต.หนองจ๊อม<br />
-                                    อ.สันทราย จ.เชียงใหม่ 50210 , เบอร์มือถือ 061-809-6661<br />
-                                    เลขผู้เสียภาษี : 0503561005794<br />
-                                    อีเมล์ : infinityp.soft@gmail.com</p>
-                            </div>
-                            <div className="CusAddr">
-                                <p>ลูกค้า วิสาหกิจชุมชนเกษตรผสมผสานสู่การแปรรูปเชิงนวัตกรรม (ข้าวน้ำจำ) <br />
-                                    โทร 090-973-2379 (นางสาวธัญลักษณ์  ปิงเมือง)
-                                </p>
+                        <div className="comadd-box">
+                            <div className="comaddress">
+                                <div className="comAddr">
+                                    <p>หจก.อินฟินิตี้ ฟีโนมีนอล ซอฟท์แวร์ (Infinity Phenomenal Software) <br />
+                                        ที่อยู่ 633/144 หมู่บ้านกาญจน์กนกทาวน์โฮม4 ต.หนองจ๊อม<br />
+                                        อ.สันทราย จ.เชียงใหม่ 50210 , เบอร์มือถือ 061-809-6661<br />
+                                        เลขผู้เสียภาษี : 0503561005794<br />
+                                        อีเมล์ : infinityp.soft@gmail.com</p>
+                                </div>
+                                <div className="CusAddr">
+                                    <p>ลูกค้า วิสาหกิจชุมชนเกษตรผสมผสานสู่การแปรรูปเชิงนวัตกรรม (ข้าวน้ำจำ) <br />
+                                        โทร 090-973-2379 (นางสาวธัญลักษณ์  ปิงเมือง)
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <div className="detail-com">
-                            <p>เลขที่   F00319<br />
-                                วันที่   15/12/2563<br />
-                                ผู้ขาย  นายมิกิ อาษาวงค์<br />
-                                เบอร์  0618096661</p>
+                        <div className="detail-com-box">
+                            <div className="detail-com">
+                                <div className="separator"></div>
+                                <p>เลขที่   F00319<br />
+                                    วันที่   15/12/2563<br />
+                                    ผู้ขาย  นายมิกิ อาษาวงค์<br />
+                                    เบอร์  0618096661</p>
+                                <div className="separator"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div className="body">
+                <div className="body-modal">
                     <div className="body-section">
                         <table class="table">
-                            <thead class="thead-dark">
+                            <thead class="table-dark">
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">รายละเอียด</th>
@@ -81,15 +88,94 @@ const TableComponent = () => {
 
                 </div>
                 <div className="sum">
-                    <div>
-
+                    <div className="left-sum">
+                        <p> ######### might be text input here ####### </p>
                     </div>
-                    <div>
-
+                    <div className="right-sum">
+                        <tbody>
+                            <tr className="total-cost">
+                                <td>
+                                    รวมเป็นเงิน
+                                </td>
+                                <td>
+                                    -
+                                </td>
+                                <td>
+                                    บาท
+                                </td>
+                            </tr>
+                            <tr className="vat7per">
+                                <td>
+                                    ภาษี7%
+                                </td>
+                                <td>
+                                    -
+                                </td>
+                                <td>
+                                    บาท
+                                </td>
+                            </tr>
+                            <tr className="tax3per">
+                                <td>
+                                    หัก ฌ ที่จ่าย something%
+                                </td>
+                                <td>
+                                    -
+                                </td>
+                                <td>
+                                    บาท
+                                </td>
+                            </tr>
+                            <tr className="final-cost">
+                                <td>
+                                    จำนวนเงินรวมทั้งสิ้น
+                                </td>
+                                <td>
+                                    -
+                                </td>
+                                <td>
+                                    บาท
+                                </td>
+                            </tr>
+                        </tbody>
+                        <div className="separator"></div>
+                    </div>
+                </div>
+                <div className="modal-footer">
+                    <div className="modal-footer-left">
+                        <p>
+                            หมายเหตุ ################
+                        </p>
+                    </div>
+                    <div className="modal-footer-right">
+                        <img src={BlueLogo} width="105" height="85" />
                     </div>
                 </div>
                 <div className="sign">
-                    .
+                    <div className="customer-sign">
+                        <div className="customer-sign-name">
+                            <p> ในนาม .........................</p>
+                        </div>
+                        <div className="signbox">
+                            <input className="sign-box"></input>
+                        </div>
+                        <div>
+                            <p>ผู้ว่าจ้าง </p>
+                            <p>...../...../.....</p>
+                        </div>
+                    </div>
+                    <div className="company-sign">
+                        <div className="company-sign-name">
+                            <p> ในนาม .........................</p>
+                        </div>
+                        <div className="company-sign-box">
+                            <input className="sign-box"></input>
+                        </div>
+                        <div>
+                            <p>ผู้อนุมัติ </p>
+                            <p> dd/mm/yyyy</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 

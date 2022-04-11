@@ -1,99 +1,194 @@
-.paper{
+/* @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@100&family=Ubuntu&display=swap');
+ */
+/* @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@100&family=Ubuntu&display=swap'); */
+.paper {
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Sarabun', sans-serif;
     width: 100vw;
     height: 100vh;
     font-size: 16px;
+    background-image: url("../../images/bg.jpg");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 70%;
 }
-.paperForm{
-    width: 70%;
-    height: 100%;
+
+.paperForm {
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
     align-items: center;
     display: flex;
     flex-direction: column;
 }
-.Com-Logo, .Quotation{
+
+.separator {
+    background-color: black;
+    height: 3px;
+    width: 100%;
+    border-radius: 3px;
+    margin: 16px 0px;
+}
+
+.Com-Logo,.Quotation {
     display: flex;
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.Logocom{
+.Logocom {
+    margin-top: 3%;
     margin-left: 3%;
 }
 
-.QuotationText{
-    margin-right: 5%;
+.body-modal {
+    width: 100%;
+    
+
+}
+
+.body-modal .table{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.QuotationText {
+    /* margin-right: 3%; */
     margin-top: 5%;
 }
 
-.Com-Logo h3{
+.Com-Logo h3 {
     flex: 1;
     top: auto;
-    
+
 }
 
-.comAdd, .detail {
-    
-    width: 100%;
+.comAdd{
+    width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
+}
+.comadd-box{
+    margin-left: 3%;
 }
 
-.comadd .comaddress{
+.comAdd .comaddress{
+    width: 100%;
+    font-family: 'Sarabun', sans-serif;
     /* width: 40%; */
-    background-color: bisque;
+    font-size: 16px;
+    
+    /* background-color: bisque; */
     display: flex;
     flex-direction: column;
 }
-
-.comadd .detail-com{
+.comadd-box{
     width: 50%;
-    background-color: burlywood;
+}
+.detail-com-box{
+    text-align: left;
+    width: 50%;
 }
 
+.body-section{
+    width: 100%;
+    font-family: 'Sarabun', sans-serif;
+    /* width: 40%; */
+    font-size: 16px;
+}
 
+.comAdd .detail-com {
+    width:50%;
+    font-family: 'Sarabun', sans-serif;
+    /* width: 40%; */
+    font-size: 16px;
+    /* background-color: burlywood; */
+    
+}
 
-.QuotationText{
+.QuotationText {
     font-size: 24px;
     font-weight: bold;
 }
 
 
-.header{
+.header {
     display: flex;
     width: 100%;
-    
     flex-direction: column;
 }
 
-
-
-
-.paperForm .body{
+.paperForm .body {
     width: 100%;
 }
 
-.body-section{
+.body-section {
     width: 80%;
 }
 
-.paperForm .sum{
-    background-color: aquamarine;
+.paperForm .sum {
+    /* background-color: aquamarine; */
     width: 100%;
     flex-direction: row;
 }
 
-.paperForm .sign{
-    background-color: coral;
+.paperForm .sign {
+    /* background-color: coral; */
     width: 100%;
+    display: flex;
+    flex: row;
+    margin-top: 5%;
+    justify-content: space-around;
+    text-align: center;
 }
 
-
-.sum{
+.sign-box{
+    pointer-events: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+.paperForm .modal-footer {
+    /* background-color:blueviolet; */
+    width: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+}
+
+
+
+
+.sum {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.sum .left-sum{
+    width: 50%;
+}
+.sum .right-sum{
+    
+    text-align: right;
+}
+
+
+
+
+
+/* this for export file */
+.exportToPDF {
+    display: flex;
+    flex-direction: column;
+}
+
+.exportToPDF .Exbutton {
+    margin-left: 80%;
 }

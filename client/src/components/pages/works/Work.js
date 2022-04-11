@@ -18,6 +18,7 @@ const Work = () => {
 
     return (
         <div className="site">
+            <div className="H-site">
             <div className='banner'>
                 <h1> Works </h1>
             </div>
@@ -35,9 +36,7 @@ const Work = () => {
                         <button type="submit">Go</button>
                     </form>
 
-
                     <button className="Createbutton" onClick={() => setShow(true)}>Create</button>
-
 
                     <Modal title="My Modal" onClose={() => setShow(false)} show={show}>
                         <Creatework />
@@ -86,7 +85,7 @@ const Work = () => {
 
             </row>
 
-
+            </div>
 
         </div>)
 };
