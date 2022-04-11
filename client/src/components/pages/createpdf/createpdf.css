@@ -35,22 +35,20 @@
     margin: 16px 0px;
 }
 
-.Com-Logo,.Quotation {
+/* .Com-Logo,.Quotation {
     display: flex;
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
-}
+} */
 
-.Logocom {
+/* .Logocom {
     margin-top: 3%;
     margin-left: 3%;
-}
+} */
 
 .body-modal {
     width: 100%;
-    
-
 }
 
 .body-modal .table{
@@ -84,7 +82,6 @@
     font-family: 'Sarabun', sans-serif;
     /* width: 40%; */
     font-size: 16px;
-    
     /* background-color: bisque; */
     display: flex;
     flex-direction: column;
@@ -114,8 +111,11 @@
 }
 
 .QuotationText {
+    
+    margin-top: 5%;
     font-size: 24px;
     font-weight: bold;
+    margin-right: 3%;
 }
 
 

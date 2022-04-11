@@ -1,5 +1,4 @@
 
-
 .banner{
     font-size: 52px;
     font-weight: bolder;
@@ -68,4 +67,9 @@
     margin-right: 10%;
     width: 80%; 
     justify-content: space-around;
+}
+
+.butdelete{
+    border: none;
+    background-color: transparent;
 }

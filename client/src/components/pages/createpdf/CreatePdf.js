@@ -18,17 +18,10 @@ const TableComponent = () => {
         <div className="paper" >
             <div className="paperForm">
                 <div className="header">
-                    <div className="Com-Logo Quotation">
-                        <div className="Logocom">
-                            <img src={LogoImage} width="75" height="55" />
-                        </div>
-                        <div className="QuotationText">
-                            <h5>ใบเสนอราคา</h5>
-                        </div>
-                    </div>
                     <div className="comAdd detail">
                         <div className="comadd-box">
                             <div className="comaddress">
+                                <img src={LogoImage} width="105" height="85" />
                                 <div className="comAddr">
                                     <p>หจก.อินฟินิตี้ ฟีโนมีนอล ซอฟท์แวร์ (Infinity Phenomenal Software) <br />
                                         ที่อยู่ 633/144 หมู่บ้านกาญจน์กนกทาวน์โฮม4 ต.หนองจ๊อม<br />
@@ -44,6 +37,9 @@ const TableComponent = () => {
                             </div>
                         </div>
                         <div className="detail-com-box">
+                            <div className="QuotationText">
+                                <h5>ใบเสนอราคา</h5>
+                            </div>
                             <div className="detail-com">
                                 <div className="separator"></div>
                                 <p>เลขที่   F00319<br />

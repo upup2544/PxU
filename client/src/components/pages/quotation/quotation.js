@@ -87,7 +87,7 @@ const Quotation = () => {
                           <Receipts />
                         </Modal></td>
                       <td> <div className="editButt"> <a>Edit</a> </div></td>
-                      <td> <button class="bi bi-trash" style={{ fontSize: 24 }} onClick={() => { deleteQuotation(items.quotationID) }}></button> </td>
+                      <td> <button class="bi bi-trash butdelete" style={{ fontSize: 24 }} onClick={() => { deleteQuotation(items.quotationID) }}></button> </td>
                     </td>
                   </td>
                 </tr>)

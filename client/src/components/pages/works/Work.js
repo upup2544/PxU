@@ -55,8 +55,6 @@ const Work = () => {
                         </tr>
                     </thead>
                     <tbody>
-
-                    </tbody>
                     {work.map((val, key) => {
                         return (
                             <tr className="itemsRow" >
@@ -77,6 +75,8 @@ const Work = () => {
                             </tr>
                         );
                     })}
+                    </tbody>
+                    
 
 
                 </table>
