@@ -5,9 +5,7 @@ import TableClass from './TableClass';
 import './createpdf.css'
 
 class ExportPdfComponent extends React.Component {
-    
     render() {
-        console.log(this.props.data)
         return (
             <div className='exportToPDF'>
                 <div className='PDF-layout'>

@@ -61,6 +61,12 @@
 }
 
 .button{
-  
+  border-radius: 8px;
+  width: 105px;
+  height: 52px;
+  font-size: 18px;
+  border: none;
+  color: white;
+  background-color: #F81F76;
   width: 150px;
 }

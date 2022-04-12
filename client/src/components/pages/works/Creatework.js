@@ -21,7 +21,7 @@ const Creatework = () => {
         }
 
         return (
-            <div className="todo">
+            <div className="todo-card">
                 {
                     isEditing
                         ? (
@@ -54,12 +54,18 @@ const Creatework = () => {
         };
 
         return (
-            <Form onSubmit={handleSubmit}>
-                <Form.Group>
-                    <Form.Label><b>Add scope</b></Form.Label>
-                    <Form.Control type="text" className="input" value={value} onChange={e => setValue(e.target.value)} placeholder="Add new scope" />
-                </Form.Group>
-                <Button variant="primary mb-3" type="submit">+</Button>
+            <Form onSubmit={handleSubmit} className="Form-creatework-section">
+                <Form.Label><b>Add scope</b></Form.Label>
+                <div className="creatework-add-scope-section">
+                    <div className="center-t">
+                        <Form.Group>
+                            <Form.Control type="text" className="input creatework-scope-input" value={value} onChange={e => setValue(e.target.value)} placeholder="Add new scope" />
+                        </Form.Group>
+                        <Button className="creatework-addbutton" variant="primary mb-3" type="submit"> + </Button>
+                    </div>
+
+                </div>
+
             </Form>
         );
     }
@@ -108,7 +114,6 @@ const Creatework = () => {
     }, []);
 
     const submitWork = () => {
-        
         todos.forEach((todo) => {
             Axios.post("http://localhost:8000/scope", {
                 workID: workID[0].workID + 1,
@@ -126,98 +131,109 @@ const Creatework = () => {
             workStatus: workStatus,
             workNote: workNote,
         }).then((response) => {
-            alert('Create Success');
+            alert('Work Created');
+            window.location.replace('http://localhost:3000/works')
         })
     };
 
 
     return (
-        <div>
-            <div className="ga">
-                <h2>Create work</h2>
-                <div className="aa">
-                    <p>ชื่องาน :  </p>
-                    <input onChange={(e) => { setworkName(e.target.value) }}></input>
-                </div>
-                <div className="aa">
-                    <p>start :  </p>
-                    <input type="date" onChange={(e) => { setstartDate(e.target.value) }}></input>
-                </div>
-                <div className="aa">
-                    <p>end :  </p>
-                    <input type="date" onChange={(e) => { setendDate(e.target.value) }}></input>
-                </div>
-                <div className="aa">
-                    <p>ผู้ว่าจ้าง :   </p>
-                    <select class="dropdown" onChange={(e) => {
-                        setcustomerID(e.target.value);
-                        if (e.target.value == 'create') {
-                            setShow(true);
-                            e.target.value = 0;
-                        }
-                    }}>
-                        <option value='0'>
-                            โปรดเลือกบริษัท
-                        </option>
-                        {company.map((val, key) => {
-                            return (
-                                <option value={val.companyID}>
-                                    {val.companyName}
+        <div className="Modal-site">
+            <div className="ga body-worksite">
+                <div className="site-comtainer">
+                    <div className="creatework-upper" id="creatework-upper">
+                        <div className="workname">
+                            <p>Project Name</p>
+                            <input onChange={(e) => { setworkName(e.target.value) }} placeholder="project name" ></input>
+                        </div>
+                        <div className="select-customer-creatework">
+                            <p>Customer Name   </p>
+                            <select class="dropdown" onChange={(e) => {
+                                setcustomerID(e.target.value);
+                                if (e.target.value == 'create') {
+                                    setShow(true);
+                                    e.target.value = 0;
+                                }
+                            }}>
+                                <option value='0' disabled selected>
+                                    โปรดเลือกบริษัท
                                 </option>
-                            );
-                        })}
-                        <option value={'create'}>Create</option>
-                        <Modal title="My Modal" onClose={() => { setShow(false) }} show={show}>
-                            <CreateCom />
-                        </Modal>
-                    </select>
-                </div>
-                <div className="aa">
-                    <p>ผู้ผลิต :   </p>
-                    <select class="dropdown" onChange={(e) => {
-                        setproducterID(e.target.value);
-                        if (e.target.value == 'create') {
-                            setShow(true);
-                            e.target.value = 0;
-                        }
-                    }}>
-                        <option value='0'>
-                            โปรดเลือกบริษัท
-                        </option>
-                        {company.map((val, key) => {
-                            return (
-                                <option value={val.companyID}>
-                                    {val.companyName}
+                                {company.map((val, key) => {
+                                    return (
+                                        <option value={val.companyID}>
+                                            {val.companyName}
+                                        </option>
+                                    );
+                                })}
+                                <option value={'create'}>Create 🏢</option>
+                                <Modal title="My Modal" onClose={() => { setShow(false) }} show={show}>
+                                    <CreateCom />
+                                </Modal>
+                            </select>
+                        </div>
+                        <div className="creatework-selectvender">
+                            <p>Venders Name   </p>
+                            <select class="dropdown" onChange={(e) => {
+                                setproducterID(e.target.value);
+                                if (e.target.value == 'create') {
+                                    setShow(true);
+                                    e.target.value = 0;
+                                }
+                            }}>
+                                <option value='0' disabled selected>
+                                    โปรดเลือกบริษัท
                                 </option>
-                            );
-                        })}
-                        <option value={'create'}>Create</option>
-                    </select>
-                </div>
-                <div className="container">
-                    <FormTodo addTodo={addTodo} />
-                    <div>
-                        {todos.map((todo, index) => (
-                            <Card>
-                                <Card.Body>
-                                    <Todo
-                                        key={index}
-                                        index={index}
-                                        todo={todo}
-                                        saveEdit={saveEdit}
-                                        removeTodo={removeTodo}
-                                    />
-                                </Card.Body>
-                            </Card>
-                        ))}
+                                {company.map((val, key) => {
+                                    return (
+                                        <option value={val.companyID}>
+                                            {val.companyName}
+                                        </option>
+                                    );
+                                })}
+                                <option value={'create'}>Create 🏢 </option>
+                            </select>
+                        </div>
+                        <div className="creatework-datepicker">
+                            <div className="creatework-datepicker-startdate">
+                                Start Data&nbsp;
+                                <input type="date" onChange={(e) => { setstartDate(e.target.value) }}></input>
+                            </div>
+                            <div className="creatework-datepicker-enddate">
+                                Due Date&nbsp;&nbsp;
+                                <input type="date" onChange={(e) => { setendDate(e.target.value) }}></input>
+                            </div>
+                        </div>
+                        <div className="creatework-note">
+                            <p>note :  </p>
+                            <input onChange={(e) => { setworkNote(e.target.value) }}></input>
+                        </div>
                     </div>
-                </div>
-                <div className="aa">
-                    <p>หมายเหตุ :  </p>
-                    <input onChange={(e) => { setworkNote(e.target.value) }}></input>
-                </div>
-                <div className="aa">
-                    <button onClick={() => { submitWork() }}>ยืนยัน</button>
+                    
+                    <div className="creatework-lower">
+                        <div className="creatework-scope">
+                            <FormTodo addTodo={addTodo} />
+                            <div className="separator"/>
+                            <div>
+                                {todos.map((todo, index) => (
+                                    <Card>
+                                        <Card.Body>
+                                            <Todo
+                                                key={index}
+                                                index={index}
+                                                todo={todo}
+                                                saveEdit={saveEdit}
+                                                removeTodo={removeTodo}
+                                            />
+                                        </Card.Body>
+                                    </Card>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="separator"/>
+                    <div className="cf-button">
+                        <button onClick={() => { submitWork() }}> Confirm </button>
+                    </div>
                 </div>
             </div>
         </div>)
