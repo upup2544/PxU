@@ -7,19 +7,22 @@ import moment from 'moment';
 
 
 const QuoSectionCom = () => {
-    const [work, setwork] = useState([]);
+    const [customer, setworkcustomer] = useState([]);
+    const [producter, setworkproducter] = useState([]);
+    const [scope, setscope] = useState([]);
     const workID = useContext(WorkAuthContext);
     useEffect(() => {
         Axios.get(`http://localhost:8000/works/${workID}`, {
         }).then((response) => {
-            setwork(response.data);
+            setworkproducter(response.data[2]);
+            setworkcustomer(response.data[1]);
+            setscope(response.data[0]);
         });
     }, []);
-    
     return (
         <>
-            {work.map(data => (
-                <div className="paper" >
+            {customer.map(data => {
+                return(<div className="paper" >
                     <div className="paperForm">
                         <div className="header">
                             <div className="comAdd detail">
@@ -69,21 +72,15 @@ const QuoSectionCom = () => {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>{data.text}</tr>
-                                        {/* <tr>
-                                            <th scope="row">1</th>
-                                            <td>ค่าพัฒนาระบบ</td>
-                                            <td>1</td>
-                                            <td>-</td>
-                                            <td>-</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>ค่าอุปกรณ์</td>
-                                            <td>1</td>
-                                            <td>-</td>
-                                            <td>-</td>
-                                        </tr> */}
+                                    {scope.map((val,index) => {
+                                    return(
+                                        <tr>{val.text}</tr>
+                                    )
+                                            
+                    
+                                    })}
+                                    
+                               
                                     </tbody>
                                 </table>
                             </div>
@@ -181,7 +178,9 @@ const QuoSectionCom = () => {
                         </div>
                     </div>
                 </div>
-            ))}
+                )
+                                }
+            )}
         </>
 
     );

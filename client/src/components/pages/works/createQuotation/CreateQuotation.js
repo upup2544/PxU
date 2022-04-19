@@ -3,7 +3,6 @@ import QuoSection from './QuoSection';
 
 class CreateQuotation extends React.Component {
     render(){
-        console.log(this.props.data)
         return (
             <div className='CreateQuotation'>
                 <div className='create-quotaion-layout'>
