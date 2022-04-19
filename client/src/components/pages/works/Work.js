@@ -3,14 +3,28 @@ import Axios from 'axios'
 import Modal from "../../../Modal/Modal";
 import Creatework from './Creatework'
 import moment from "moment";
+<<<<<<< HEAD
 import Createquotation from "../quotation/Createquotation";
+=======
+import CreateQuo from './createQuotation/CreateQuotation';
+>>>>>>> 1e51ff56ac7430305436847bccb164b1d5ce1f80
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './work.css'
 
+const WorkAuthContext = React.createContext();
+
 const Work = () => {
+    const [count, setcount] = useState([]);
     const [work, setWork] = useState([]);
     const [show, setShow] = useState(false);
+<<<<<<< HEAD
     const [createquotation, setcreatequotation] = useState(false);
+=======
+    const [CreateDOCS, setCreateDOCS] = useState(false);
+    const [CreatePDF, setCreatePDF] = useState(false);
+    const [CreateQuotation, setCreateQuotation] = useState(false);
+
+>>>>>>> 1e51ff56ac7430305436847bccb164b1d5ce1f80
     useEffect(() => {
         Axios.get(`http://localhost:8000/works`, {
         }).then((response) => {
@@ -21,28 +35,28 @@ const Work = () => {
     return (
         <div className="site">
             <div className="H-site">
-            <div className='banner'>
-                <h1> Works </h1>
-            </div>
-
-            <div className='navbar'>
-                <div className="navbar-left">
-
+                <div className='banner'>
+                    <h1> Works </h1>
                 </div>
 
-                <div className="navbar-right">
+                <div className='navbar'>
+                    <div className="navbar-left">
 
-                    <form className="search" onsubmit="event.preventDefault();" role="search">
-                        <label for="search">Search for stuff</label>
-                        <input id="search" type="search" placeholder="Search..." autofocus required />
-                        <button type="submit">Go</button>
-                    </form>
+                    </div>
 
-                    <button className="Createbutton" onClick={() => setShow(true)}>Create</button>
+                    <div className="navbar-right">
 
-                    <Modal title="My Modal" onClose={() => setShow(false)} show={show}>
-                        <Creatework />
-                    </Modal>
+                        <form className="search" onsubmit="event.preventDefault();" role="search">
+                            <label for="search">Search for stuff</label>
+                            <input id="search" type="search" placeholder="Search..." autofocus required />
+                            <button type="submit">Go</button>
+                        </form>
+
+                        <button className="Createbutton" onClick={() => setShow(true)}>Create</button>
+                        <Modal title="My Modal" onClose={() => setShow(false)} show={show}>
+                            <Creatework />
+                        </Modal>
+                    </div>
                 </div>
             </div>
             <div className="body">
@@ -81,21 +95,18 @@ const Work = () => {
                                     </td>
                                 </td>
                             </tr>
-                        );
-                    })}
-                    </tbody>
-                    
+                                );
+                            })}
+                        </tbody>
 
 
-                </table>
-            </div>
-            <row>
 
-            </row>
+                    </table>
+                </div>
 
             </div>
 
         </div>)
 };
-
+export  {WorkAuthContext};
 export default Work;

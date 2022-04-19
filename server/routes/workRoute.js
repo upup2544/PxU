@@ -52,5 +52,21 @@ router.post('/', (req, res) => {
     }) 
 });
 
+router.get('/:id', (req, res) => {  // not done yet waitin for passion 
+    const wID = req.params.id;
+    const sqlWork = "SELECT * FROM work as w, company as c WHERE w.producterID = c.companyID AND  w.workID = ? ";
+    const sqlScope = "SELECT * FROM scope as s, work as w WHERE s.workID = w.workID";
+    console.log(wID);
+    db.query(sqlWork,[wID], (err, sqlWorkResult) => {
+        if(err) throw err;
+        console.log(sqlWorkResult);
+        db.query(sqlScope, (err, sqlScopeResult) =>{
+            if(err) throw err;
+            console.log(sqlScopeResult);
+            res.send([sqlWorkResult, sqlScopeResult]);
+        })
+    })
+})
+
 
 export default router;

@@ -4,7 +4,7 @@ class TableClass extends React.Component {
 
     render() {
         return (
-            <Ok/>
+            <Ok />
         );
     }
 }

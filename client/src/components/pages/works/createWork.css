@@ -1,0 +1,116 @@
+.separator {
+    background-color: black;
+    height: 1px;
+    width: 100%;
+    border-radius: 3px;
+    margin: 16px 0px;
+    opacity: 40%;
+}
+
+
+.Modal-site {
+    width: 100vw;
+    height: 100vh;
+}
+
+.body-worksite {
+    width: 70%;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.creatework-upper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.creatework-upper div{
+    margin-top: 10px;
+}
+
+.body-worksite .site-comtainer {
+    display: flex;
+    flex-direction: column;
+}
+
+#creatework-upper div {
+    width: 50%;
+}
+
+.Form-creatework-section {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.creatework-add-scope-section {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.creatework-scope-input {
+    width: 100%;
+}
+.center-t{
+    display: flex;
+    flex-direction: row;
+
+}
+.workname {
+    width: 100%;
+}
+
+.workname input {
+    width: 80%;
+}
+
+.select-customer-creatework select, .creatework-selectvender select{
+    padding: 7px 40px 7px 12px;
+    width: 80%;
+    border: 1px solid #E8EAED;
+    border-radius: 5px ;
+    background: white ;
+    box-shadow: 0 1px 3px -2px #9098A9 ;
+    cursor: pointer ;
+    font-size: 16px ;
+    transition: all 150ms ease ;
+    color: black;    
+}
+
+.creatework-lower{
+    margin-top: 30px;
+}
+
+.creatework-note input{
+    width: 80%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+.creatework-note input:focus{
+    width: 80%;
+    border-color: red yellow green transparent;
+}
+
+.creatework-datepicker-enddate input, .creatework-datepicker-startdate input{
+    width: 60%;
+}
+
+.todo-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+.cf-button button{
+    width: 105px;
+    height: 52px;
+    border-radius: 8px;
+    color: white;
+    background-color: #5BB77B;
+    font-size: 18px;
+    border: none;
+}

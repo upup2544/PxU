@@ -7,7 +7,7 @@ import Modal from "../../../Modal/Modal";
 import PDF from "../createpdf/ExportPdf"
 import Receipts from "../receipts/Receipts";
 import Company from "../company/Company";
-import { Button } from "bootstrap";
+
 const AuthContext = React.createContext();
 
 const Quotation = () => {
@@ -68,14 +68,21 @@ const Quotation = () => {
                   <td>
                     <td className="menubar">
                       {/* <td> <button class="bi bi-filetype-pdf" onClick={(e) => {return <ExportPdfComponent/>} }></button>  </td> */}
-                      <td> <a class="bi bi-filetype-pdf" style={{ fontSize: 24 }} onClick={() => {
+                      <td> 
+                        <a class="bi bi-filetype-pdf" style={{ fontSize: 24 }} onClick={() => {
                         setCreatePDF(true);
                         setcount(items.quotationID);
-                      }}><Modal title="ใบเสนอราคาPDF" onClose={() => setCreatePDF(false)} show={CreatePDF}>
-                        <AuthContext.Provider value={count}>
-                          <PDF/>
-                        </AuthContext.Provider>
-                        </Modal></a> </td>
+                        }}>
+                          <Modal title="ใบเสนอราคาPDF" onClose={() => setCreatePDF(false)} show={CreatePDF}>
+                            <AuthContext.Provider value={count}>
+                              <PDF/>
+                            </AuthContext.Provider>
+                          </Modal>
+                        </a> </td>
+
+
+
+
                       <td> <a class="bi bi-file-earmark-word" style={{ fontSize: 24 }} onClick={() => {
                         setCreateDOCS(true);
                       }} ><Modal title="ใบเสนอราคาDOC" onClose={() => setCreateDOCS(false)} show={CreateDOCS}>
