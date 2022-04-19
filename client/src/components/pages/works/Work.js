@@ -25,6 +25,13 @@ const Work = () => {
         });
     }, []);
 
+    const deleteWork= (ID) => {
+        if (window.confirm("Do you want to delete this?")) {
+          Axios.delete(`http://localhost:8000/works/${ID}`)
+          window.location.reload(false);
+        }
+      }
+
     return (
         <div className="site">
             <div className="H-site">
@@ -84,7 +91,7 @@ const Work = () => {
                                                         </Modal>
                                                     </a></td>
                                                 <td> <div className="editButt"> <a>Edit</a> </div></td>
-                                                <td> <a class="bi bi-trash" style={{ fontSize: 24 }} ></a> </td>
+                                                <td> <a class="bi bi-trash" style={{ fontSize: 24 }} onClick={()=>{deleteWork(val.workID)}}></a></td>
                                             </td>
                                         </td>
                                     </tr>

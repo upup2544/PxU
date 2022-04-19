@@ -67,5 +67,14 @@ router.get('/:id', (req, res) => {  // not done yet waitin for passion
     })
 })
 
+router.delete('/:id', (req, res) => {
+    const workID = req.params.id;
+    const sqlDelete = "DELETE FROM work WHERE workID=?";
+    db.query(sqlDelete,[workID],(err, sqlQuotation) => {
+        if(err) throw err;
+    })
+})
+
+
 
 export default router;
