@@ -22,7 +22,7 @@ const QuoSectionCom = () => {
     return (
         <>
             {customer.map(data => {
-                return(<div className="paper" >
+                return (<div className="paper" >
                     <div className="paperForm">
                         <div className="header">
                             <div className="comAdd detail">
@@ -64,7 +64,6 @@ const QuoSectionCom = () => {
                                 <table class="table">
                                     <thead class="table-dark">
                                         <tr>
-                                            <th scope="col">#</th>
                                             <th scope="col">รายละเอียด</th>
                                             <th scope="col">จำนวน</th>
                                             <th scope="col">ราคาต่อหน่วย</th>
@@ -72,15 +71,16 @@ const QuoSectionCom = () => {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    {scope.map((val,index) => {
-                                    return(
-                                        <tr>{val.text}</tr>
-                                    )
-                                            
-                    
-                                    })}
-                                    
-                               
+                                        {scope.map((val, index) => {
+                                            return (
+                                                <tr>
+                                                    <td>{val.text}</td>
+                                                    <th> <input type="number"/> </th>
+                                                    <td> <input type="number"/> </td>
+                                                    <td> <input type="number"/> </td>
+                                                </tr>
+                                            )
+                                        })}
                                     </tbody>
                                 </table>
                             </div>
@@ -179,7 +179,7 @@ const QuoSectionCom = () => {
                     </div>
                 </div>
                 )
-                                }
+            }
             )}
         </>
 
