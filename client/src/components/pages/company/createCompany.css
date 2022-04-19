@@ -1,0 +1,30 @@
+.ga{
+    height: 100vh;
+    width: 1680px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.containbox{
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.aaa{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.containbox .aa{
+    width: 50%;
+    display: block;
+    align-items: center;
+    justify-content: center;
+}

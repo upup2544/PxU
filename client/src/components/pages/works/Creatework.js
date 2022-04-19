@@ -166,7 +166,7 @@ const Creatework = () => {
                                     );
                                 })}
                                 <option value={'create'}>Create 🏢</option>
-                                <Modal title="My Modal" onClose={() => { setShow(false) }} show={show}>
+                                <Modal title="Create Company" onClose={() => { setShow(false) }} show={show}>
                                     <CreateCom />
                                 </Modal>
                             </select>

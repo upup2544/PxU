@@ -12,6 +12,7 @@ const WorkAuthContext = React.createContext();
 const Work = () => {
     const [count, setcount] = useState([]);
     const [work, setWork] = useState([]);
+    const [scope, setScope] = useState([]);
     const [show, setShow] = useState(false);
     const [CreateDOCS, setCreateDOCS] = useState(false);
     const [CreatePDF, setCreatePDF] = useState(false);
