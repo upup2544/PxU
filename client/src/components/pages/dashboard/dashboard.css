@@ -1,14 +1,23 @@
 .Container{
     max-width: 100%;
 }
-
 .ProjectTile{
     width: 100%;
 }
-
 .Container .Lower-tile{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
+    width: 100%;
+}
+
+.left-lower-tile{
+    display: block;
+    width: 50%;
+}
+
+.right-lower-tile{
+    display: block;
+    width: 50%;
 }

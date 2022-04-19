@@ -30,20 +30,15 @@ const Work = () => {
                 <div className='banner'>
                     <h1> Works </h1>
                 </div>
-
                 <div className='navbar'>
                     <div className="navbar-left">
-
                     </div>
-
                     <div className="navbar-right">
-
                         <form className="search" onsubmit="event.preventDefault();" role="search">
                             <label for="search">Search for stuff</label>
                             <input id="search" type="search" placeholder="Search..." autofocus required />
                             <button type="submit">Go</button>
                         </form>
-
                         <button className="Createbutton" onClick={() => setShow(true)}>Create</button>
                         <Modal title="My Modal" onClose={() => setShow(false)} show={show}>
                             <Creatework />
@@ -95,18 +90,12 @@ const Work = () => {
                                 );
                             })}
                         </tbody>
-
-
-
                     </table>
                 </div>
                 <row>
-
                 </row>
-
             </div>
-
         </div>)
 };
-export  {WorkAuthContext};
+export { WorkAuthContext };
 export default Work;

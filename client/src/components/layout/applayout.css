@@ -8,12 +8,13 @@
     background-color: #F0F0F0;
 }
 .sidebar{
+    display: block;
     width: 100%;
     max-width: 193px;
 }
 .outlet{
+    display: block;
     width: 100%;
-    max-width: auto;
 }
 
 @media (max-width:800px){
