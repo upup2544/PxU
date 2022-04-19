@@ -23,10 +23,10 @@ function ProjectCard({ project }) {
     console.log(dura + "days")
     return (
         <div className='project-card'>
-            <label className='section-title'>Coming UP🔥</label><br />
-            <div className='data '>
+            <label className='section-title'>Coming Up🔥</label>
+            <div className='data'>
                 <div className='project-info'>
-                    <label className='project-title'>{project.workName}</label><br />
+                    <label className='project-title'>{project.workName}</label>
                 </div>
                 <div className='project-dayleft'>
                     <label className='remain'>{dura}</label>

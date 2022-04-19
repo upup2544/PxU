@@ -18,7 +18,6 @@ const Pject = () => {
   // prv
   return (
     <div className='projects'>
-
       <div>
           {prj.map((val,key) => {
           return <ProjectCard project={val} />

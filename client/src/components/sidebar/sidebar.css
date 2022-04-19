@@ -24,14 +24,14 @@
 }
 
 .sidebarList {
+    width: 100%;
     height: auto;
     padding: 0;
     margin: 0;
-    width: 100%;
-
+    
 }
 
-.sidebarList .items {
+.menulist .items {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,11 +44,41 @@
     justify-content: center;
 }
 
-.sidebarList .items:hover{
+.menulist .items:hover{
     cursor: pointer; 
     background-color: salmon;
 }
 
-.sidebarList #active{
+.menulist #active{
     background-color: #1C2531;
+}
+
+
+@media (max-width: 800px) {
+    .profilebox{
+        display: none;
+    }
+    .sidebar {   
+        display: flex;
+        flex-direction: column;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        max-width: 120px;
+        background-color: #334152;
+    }
+    .sidebarList {
+        height: auto;
+        width: 100%;
+    }
+    .menulist .icon-menu{
+        font-size: 14px;
+    }
+    .menulist .items {
+        display: flex;
+        flex-direction: column;
+        font-size: 10px;
+        color: white;
+    }
 }

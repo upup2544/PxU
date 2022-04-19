@@ -4,8 +4,13 @@ import Sidebar from "../sidebar/Sidebar";
 import './applayout.css'
 const AppLayout = () => {
     return (<div className="Layout">
-        <Sidebar/>
-        <Outlet/>
+        <div className="sidebar"> 
+            <Sidebar />
+        </div>
+        <div className="outlet">
+            <Outlet/>
+        </div>
+
     </div>
     );
 };
